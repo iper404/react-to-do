@@ -3,7 +3,7 @@
 import React from 'react'
 import Todo from './Todo'
 
-export default function TodoList({todos}) {
+export default function TodoList({ todos, toggleTodo }) {
     return (
         // <div>
             // {/* {todos.length}  */}
@@ -12,8 +12,8 @@ export default function TodoList({todos}) {
             // within Todo.js component */}
         // </div>
 
-        todos.map(todo=>{
-            return <Todo key={todo} todo={todo} />
+        todos.map(todo => {
+            return <Todo key={todo.id} toggleTodo={toggleTodo} todo={todo} />
             // Assign a unique key to every todo
             // so that React doesn't re-render
             // every single todo, only the changed ones is what we want
